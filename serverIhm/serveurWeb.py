@@ -36,6 +36,7 @@ class myHandler(BaseHTTPRequestHandler):
 
 					s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 					s.connect(("127.0.0.1", 5000))
+					msgServer = s.recv(1024)
 					s.send("1,10,10")
 					s.close()
 					return
@@ -43,11 +44,13 @@ class myHandler(BaseHTTPRequestHandler):
 
 			elif self.path =="/tournerDroite":
 
-				s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-				s.connect(("127.0.0.1", 5000))
-				s.send("2,10,10")
-				s.close()
-				return
+					s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+					s.connect(("127.0.0.1", 5000))
+					msgServer = s.recv(1024)
+					s.send("2,10,10")
+					s.close()
+					return
+
 		except Exception:
 				print "erreur de connexion"
 				return
