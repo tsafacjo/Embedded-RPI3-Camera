@@ -40,6 +40,6 @@ Il s'agit du serveur principal qui envoie les pages  au client qui est un naviga
 ### Excution
 
   Excuter les commandes suivantes
-  1. cd serverIhm
+  1. cd ServeurIhm
   2. python 2.7 serveurWeb.py
   3. ouvrir le navigateur de votre choix , taper http://ip:8080/ (ip est l'adresse de la raspberry pi sur le réseau local, si c'est pour un test sans réseau utiliser 127.0.0.1)
