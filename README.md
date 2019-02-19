@@ -3,20 +3,20 @@
 Le but du projet est de contrôler une caméra via une RPI3. Pour cela nous avons 3 composants principaux à savoir: Un client qui , et 2 serveurs donc 1 pour la caméra et l'autre pour le cerveau moteur  
 
 
-##serveur Caméra
+## Serveur Caméra
 
-###Description
+### Description
 
  Il s'agit du serveur en charge de la prise de la photo.
-###Cross Compilation du fichier source
+### Cross Compilation du fichier source
 
-###Excution
+### Excution
 Lancer la commande
  ./serveur_tcp
 
-##serveur servoMoteur
+## Serveur servoMoteur
 
-###Description
+### Description
 Lancer mon serveurMoteur
  - Lancer la commande  python3.6 serveurMoteur.py
  - le serveur est connecté sur le port 5000
@@ -24,12 +24,12 @@ Lancer mon serveurMoteur
  si a=1 rotation dans le sens des aiguilles d'une montre
 si a=2 sens contraire des aiguilles d'une montre
 
-###Execution
+### Execution
 Depuis la racine du projet exécuter les commandes suivantes
 1. cd ServeurServoMoteurs
 2. python3.6  serveurMoteur.py
 
-##ServeurWeb
+## ServeurWeb
 
 #### Description
 Il s'agit du serveur principal qui envoie les pages  au client qui est un navigateur , de via les buttons disponibles sur la page , l'utilisateur peut envoyer des requêttes (prendre une photo, tourner à gauche , tourner à droite )
