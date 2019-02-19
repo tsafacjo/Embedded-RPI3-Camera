@@ -2,6 +2,7 @@
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 from os import curdir, sep
 import socket
+import time
 PORT_NUMBER = 8080
 
 
@@ -17,20 +18,25 @@ class myHandler(BaseHTTPRequestHandler):
 		try:
 			if self.path=="/":
 				self.path="/index.html"
+			#communication avec le serveur qui prend les photos
 			elif self.path =="/prendrePhoto":
 
 
 				s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-				s.connect(("172.72.0.1", 5555))
-				s.send("photo")
+				s.connect(("127.0.0.1", 1977))
+				s.send("p")
+				s.send("p")
 				s.close()
 				return
+
+			#communication avec le serveur qui controlle les servos moteurs
+
 			elif self.path =="/tournerGauche":
 
 
 					s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-					s.connect(("", 5555))
-					s.send("turn left 12")
+					s.connect(("127.0.0.1", 5000))
+					s.send("1,10,10")
 					s.close()
 					return
 
@@ -38,8 +44,8 @@ class myHandler(BaseHTTPRequestHandler):
 			elif self.path =="/tournerDroite":
 
 				s= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-				s.connect(("", 5555))
-				s.send("turn right 12")
+				s.connect(("127.0.0.1", 5000))
+				s.send("2,10,10")
 				s.close()
 				return
 		except Exception:
@@ -54,6 +60,9 @@ class myHandler(BaseHTTPRequestHandler):
 				mimetype='text/html'
 				sendReply = True
 			if self.path.endswith(".jpg"):
+				mimetype='image/jpg'
+				sendReply = True
+			if self.path.endswith(".jpeg"):
 				mimetype='image/jpg'
 				sendReply = True
 			if self.path.endswith(".gif"):

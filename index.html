@@ -11,11 +11,15 @@
 
           $("#prendrePhoto").click(function(event){
             //   $('#stage').append("<img src= 'photo.png'>") ;
+            $('#paragraph').load("prendrePhoto") ;
+            setTimeout(function(){
+              $('#stage').children('img') .attr('src', "image.jpeg") ;
+              document.location.reload(true) ;
+              //$('#stage').children('img').load();
+            }, 3000);
 
-            $('#stage').children('img') .attr('src', "photo.jpg") ;
-            $('#stage').children('img').load();
-            document.location.reload(true) ;
-            ('#paragraph').load("prendrePhoto") ;
+
+          //
           //      $('#photo').attr('src', "photo1.jpg");
 
 
@@ -63,7 +67,7 @@
 
       <div id = "stage" style = "background-color:white;">
 
-         <img  id = "photo" src ="photo.jpg" style = "width: 500px;  height :500px ;" >
+         <img  id = "photo" src ="image.jpeg" style = "width: 500px;  height :500px ;" >
       </div>
       <br/>
       <form class="" action="index.html" method="post">
@@ -73,7 +77,7 @@
          <button type="button" name="button" id ="tournerDroite">Tourner à droite </button>
       </form>
       <p id ="paragraph">Heure de la dernière photo : </p>
-      <p id ="paragraph">Heure de la dernière photo : </p>
+      <p id ="paragraph"> </p>
     </center>
    </body>
 </html>
