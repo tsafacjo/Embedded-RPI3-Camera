@@ -31,7 +31,7 @@ Depuis la racine du projet exécuter les commandes suivantes
 
 ## ServeurWeb
 
-#### Description
+### Description
 Il s'agit du serveur principal qui envoie les pages  au client qui est un navigateur , de via les buttons disponibles sur la page , l'utilisateur peut envoyer des requêttes (prendre une photo, tourner à gauche , tourner à droite )
 
  - La communication avec le serveur qui contrôle la caméra  se fait par le biais d'une communication TCP sur le port 1977.
@@ -39,7 +39,7 @@ Il s'agit du serveur principal qui envoie les pages  au client qui est un naviga
 
 ### Excution
 
-  Excuter les commandes suivantes
+  Excuter les commandes suivantes :
   1. cd ServeurIhm
-  2. python 2.7 serveurWeb.py
+  2. python2.7 serveurWeb.py
   3. ouvrir le navigateur de votre choix , taper http://ip:8080/ (ip est l'adresse de la raspberry pi sur le réseau local, si c'est pour un test sans réseau utiliser 127.0.0.1)
