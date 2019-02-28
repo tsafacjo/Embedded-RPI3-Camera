@@ -7,8 +7,13 @@ Le but du projet est de contrôler une caméra via une RPI3. Pour cela nous avon
 
 ### Description
 
- Il s'agit du serveur en charge de la prise de la photo.
+ - Il s'agit du serveur TCP en charge de la prise de la photo.
+ - Le serveur est connecter sur le port 1977
+ - lancer la commande "p" pour prendre une image
+ 
 ### Cross Compilation du fichier source
+-lancez la commande suivante à partir du répertoire contenant Buildroot:
+# ./output/host/usr/bin/arm-linux-gcc fichier.c -o output.c (en l'occurence serveur_tcp)
 
 ### Excution
 Lancer la commande
